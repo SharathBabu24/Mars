@@ -31,6 +31,7 @@ The same with GitHub, have heard of it ,only ever used to download mods/plugins 
 Now seeing the uses of it , I understand why open source softwares and small developers use it so much.
 When I tried to push my changes into the repo,it asked for my login details and it didn't work. I got struct there for a long time, only to know that GitHub and made PAT(Personal Access Token) only through which it can be done.
 Apart from this hiccup everything went smooth. Clone, add, commit, push was all done with ease
+Also have planned to create and maintain a personal repo to store all my projects.
 
 ## THANK YOU
 ### This was one insane week with 2 assignments, 2 project, 1 presentation and the Task :)
