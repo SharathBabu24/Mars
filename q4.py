@@ -1,4 +1,4 @@
-# Take the file path as input
+# Input of the file Path
 file_path = input("Enter the file path: ")
 
 # Read the matrix from the file
@@ -8,7 +8,7 @@ for line in file:
     row = list(map(int,line.split()))
     matrix.append(row)
 
-# Get the dimensions of the original matrix
+# Finding the dimensions of the matrix
 rows = len(matrix)
 cols = len(matrix[0])
 

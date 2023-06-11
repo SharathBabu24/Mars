@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Take the desired length of the password as input
+# Taking the number of charecters as the input parameter
 length="$1"
 
-# Define the characters that can be used in the password
+# Setting the characters that can be used in the password
 characters="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+{}[]|;:,.<>?/~\`"
 
 # Generate the random password

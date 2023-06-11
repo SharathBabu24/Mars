@@ -10,13 +10,18 @@ image = mpimg.imread(image_path)
 brightness = np.dot(image[:, :, :], [0.21, 0.72, 0.07])
 brightness/=3
 # Define the brightness threshold
-threshold = 30 # Adjust this value to set your desired brightness level
+threshold = 30 
 
 # Create a mask for pixels above and below the threshold
 above_threshold = brightness > threshold
 below_threshold = brightness <= threshold
 
-def calculate_pixel_types(image_path, threshold):
+
+# Set pixels above the threshold to black (0) and below to white (1)
+bw_image = np.where(above_threshold, 1, 0)
+
+# Define a function to calculate the pixel types
+def calculate(image_path, threshold):
     # Open the image
     image = plt.imread(image_path)
 
@@ -46,21 +51,15 @@ def calculate_pixel_types(image_path, threshold):
 
     return typeA_percentage, typeB_percentage
 
-# Set the image path and the threshold (e.g., (160, 160, 160))
-image_path = 'sun.jpeg'
+# Set the threshold 
 threshold = (160, 160, 160)
 
 # Calculate the pixel types
-typeA_percentage, typeB_percentage = calculate_pixel_types(image_path, threshold)
+typeA_percentage, typeB_percentage = calculate(image_path, threshold)
 
-# Print the results
 print(f"Type A pixels: {typeA_percentage}%")
 print(f"Type B pixels: {typeB_percentage}%")
 
-# Set pixels above the threshold to black (0) and below to white (1)
-bw_image = np.where(above_threshold, 1, 0)
-
-# Create a figure with two subplots
 fig, axes = plt.subplots(1, 2, figsize=(10, 5))
 
 # Display the first image in the first subplot
@@ -71,22 +70,6 @@ axes[0].set_title('Image 1')
 axes[1].imshow(bw_image,cmap="gray")
 axes[1].set_title('Image 2')
 
-# Remove the axis labels
-for ax in axes:
-    ax.axis('off')
-
 plt.tight_layout()
 plt.show()
-
-
-
-"""
-# Display the image
-image = plt.imread(image_path)
-plt.imshow(image)
-plt.axis('off')
-plt.show()
-
-"""
-
 
